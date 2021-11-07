@@ -18,21 +18,17 @@ public class TestGithub {
     void shouldFindSelenideRepoInGithub () {
 
         // Откройте страницу Selenide в Github
-
         open ("https://github.com/");
         $("[data-test-selector=nav-search-input]").setValue("selenide").pressEnter();
         $$(".repo-list li").first().$("a").click();
 
         // Перейдите в раздел Wiki проекта
-
         $(byText("Wiki")).click();
 
         // Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
-
         $(".markdown-body").shouldHave(text("Soft assertions"));
 
         // Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
-
         $(".markdown-body").$(byText("Soft assertions")).click();
         $(".markdown-body").shouldHave(text("com.codeborne.selenide.junit5.SoftAssertsExtension"));
 

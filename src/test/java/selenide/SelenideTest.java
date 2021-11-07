@@ -23,7 +23,7 @@ public class SelenideTest {
         $("column-a").shouldHave(text("B"));
         $("column-b").shouldHave(text("A"));
 
-        //actions().moveToElement($("column-a")).clickAndHold()
+        // actions().moveToElement($("column-a")).clickAndHold()
                 //.moveByOffset(300, 0).release().perform();
 
 
