@@ -17,16 +17,11 @@ public class SelenideTest {
     @Test
     void drugAndDropTests(){
 
-        // не работает
         open("https://the-internet.herokuapp.com/drag_and_drop");
-        $("column-a").dragAndDropTo($("column-b"));
-        $("column-a").shouldHave(text("B"));
-        $("column-b").shouldHave(text("A"));
+        $("#column-a").dragAndDropTo($("#column-b"));
 
-        // actions().moveToElement($("column-a")).clickAndHold()
-                //.moveByOffset(300, 0).release().perform();
-
-
+        $("#column-a header").shouldHave(text("B"));
+        $("#column-b header").shouldHave(text("A"));
 
     }
 
