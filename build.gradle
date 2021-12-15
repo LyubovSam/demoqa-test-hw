@@ -8,7 +8,7 @@ repositories {
 }
 def allureVersion = "2.16.0",
     selenideVersion = "5.24.0",
-    junitVersion = "5.8.1"
+    junitVersion = "5.8.2"
 allure {
     version = allureVersion
     autoconfigure = true
@@ -36,4 +36,9 @@ tasks.withType(JavaCompile) {
 tasks.withType(Test) {
     useJUnitPlatform()
 }
-
+task properties_tests(type: Test) {
+    systemProperty("browserSize", System.getProperty("browserSize", "400x400"))
+    useJUnitPlatform {
+        includeTags "properties"
+    }
+}
