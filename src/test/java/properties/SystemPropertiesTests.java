@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class SystemPropertiesTests {
-    @Tag("properties")
     @Test
+    @Tag("properties")
     void propertiesTest() {
         String browser = System.getProperty("browser", "chrome");
         String version = System.getProperty("version", "91");
